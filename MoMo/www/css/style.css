@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+.chat-text-input {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+
+#chat-content .scroll {
+	height: 100%;
+}
+

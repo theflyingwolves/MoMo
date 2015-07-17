@@ -31,27 +31,27 @@ angular.module('starter.services', [])
   var chats = [{
     id: 0,
     name: 'Ben Sparrow',
-    lastText: 'You on your way?',
+    lastText: '肉夹馍 金德来',
     face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
   }, {
     id: 1,
     name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
+    lastText: '凉皮 黄土地',
     face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
   }, {
     id: 2,
     name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
+    lastText: '番茄鸡蛋面 香港小厨',
     face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
   }, {
     id: 3,
     name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
+    lastText: '刀削面 清香小菜',
     face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
   }, {
     id: 4,
     name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
+    lastText: '九里香 PGP',
     face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
   }];
 

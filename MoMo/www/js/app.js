@@ -32,7 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -69,6 +69,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+  .state('tab.profile',{
+    url:'/profile',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile.html',
+        controller:'ProfileCtrl'
+      }
+    }
+  })
+
+  .state('tab.edit-address',{
+    url:'/profile/:id/addresses',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile-edit-address.html',
+        controller:'ProfileEditCtrl'
+      }
+    }
+  })
+
+  .state('tab.edit-contact',{
+    url:'/profile/:id/contacts',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile-edit-contact.html',
+        controller:'ProfileEditCtrl'
+      }
+    }
+  })
+
+  .state('tab.settings',{
+    url:'/profile/:id/settings',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/settings.html',
+        controller:'SettingsCtrl'
+      }
+    }
+  })
+
   .state('tab.account', {
     url: '/account',
     views: {
@@ -80,6 +120,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/profile');
 
 });

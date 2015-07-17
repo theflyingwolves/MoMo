@@ -1,5 +1,29 @@
 angular.module('starter.services', [])
 
+.factory('Profiles',function(){
+  var profile = {
+    id:0,
+    name:'MoMo',
+    description:'Hi~ This is MoMo~',
+    addresses:[
+                '12 Kent Ridge Drive, Singapore(119243)',
+                '13 Kent Ridge Drive, Singapore(119243)',
+                '14 Kent Ridge Drive, Singapore(119243)',
+              ],
+    contact:'+65 82124118',
+    face:'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png',
+    facebook:'theflyingwolves@163.com',
+    wechat:'theflyingwolves'
+  };
+
+  return {
+    all: function(){
+      return profile;
+    }
+  };
+
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

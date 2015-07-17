@@ -1,0 +1,48 @@
+<ion-view view-title="Profile">
+  <ion-content class="padding">
+    <div class="list card">
+        <div class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+          <img ng-src="{{profile.face}}">
+          <h2>{{profile.name}}</h2>
+          <p>{{profile.description}}</p>
+          <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
+        </div>
+    </div>
+
+    <div class="list list-inset">
+
+        <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/addresses">
+          <h2>Delivery Addresses</h2>
+          <p>{{profile.addresses[0]}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+
+        <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/contacts">
+          <h2>Contact Numbers</h2>
+          <p>{{profile.contact}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </div>
+
+    <div class="list list-inset">
+        <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/facebook">
+          <h2>Facebook</h2>
+          <p>{{profile.facebook}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+
+        <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/wechat">
+          <h2>Wechat</h2>
+          <p>{{profile.wechat}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </div>
+
+    <div class="list list-inset">
+        <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/settings">
+          <h2>Settings</h2>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

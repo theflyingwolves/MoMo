@@ -21,6 +21,21 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+.controller('ProfileCtrl',function($scope,Profiles){
+  $scope.profile = Profiles.all();
+  $scope.loadDetail = function(id){
+    
+  };
+})
+
+.controller('ProfileEditCtrl',function($scope,$stateParams,Profiles){
+  $scope.profile = Profiles.all();
+})
+
+.controller('SettingsCtrl',function($scope,Profiles){
+  $scope.profile = Profiles.all();
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

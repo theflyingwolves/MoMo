@@ -17,8 +17,24 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, $ionicModal, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+
+  $ionicModal.fromTemplateUrl('templates/chat-info.html',{
+    scope:$scope,
+    animation:'slide-in-up'
+  }).then(function(modal){
+    $scope.orderInfoModal = modal;
+  });
+
+  $scope.viewDetails = function(){
+    $scope.orderInfoModal.show();
+  };
+
+  $scope.hideDetails = function(){
+    $scope.orderInfoModal.hide();
+  };
+  
 })
 
 .controller('ProfileCtrl',function($scope,Profiles){

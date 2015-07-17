@@ -60,7 +60,11 @@ angular.module('starter.services', [])
                 }
             }
             return null;
+        },
+        add: function(mission) {
+            missions.push(mission)
         }
+
     };
 })
 

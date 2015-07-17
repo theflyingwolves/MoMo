@@ -1,6 +1,13 @@
 <ion-view view-title="Explore">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon ion-plus" ng-click="newEvent()"></button>
+    <h1 class="title"></h1>
+    <button menu-toggle="left" class="button button-icon icon ion-heart"></button>
+  </ion-nav-buttons>
   <ion-content>
+
     <ion-list>
+
       <!--<ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/mission/{{chat.id}}">-->
       <ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap"">
 

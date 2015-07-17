@@ -29,7 +29,7 @@ ion-item > .item-content{
 /**popover**/
 
 .popover {
-    opacity: 100%!important;
+    opacity: 100!important;
     left:50px!important;
     top:100px!important;
     width: 300px!important;
@@ -51,4 +51,14 @@ ion-item > .item-content{
 
 
 
+/**chat**/
+.chat-text-input {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+
+#chat-content .scroll {
+	height: 100%;
+}
 

@@ -32,7 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -59,7 +59,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.chat-detail', {
+
+  .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
@@ -67,7 +68,57 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatDetailCtrl'
         }
       }
-    })
+  })
+
+  .state('tab.chat-detail-info',{
+      url:'/chats/info/:chatId',
+      views:{
+        'tab-chats':{
+          templateUrl:'templates/chat-info.html',
+          controller:'ChatDetailCtrl'
+        }
+      }
+  })
+
+  .state('tab.profile',{
+    url:'/profile',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile.html',
+        controller:'ProfileCtrl'
+      }
+    }
+  })
+
+  .state('tab.edit-address',{
+    url:'/profile/:id/addresses',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile-edit-address.html',
+        controller:'ProfileEditCtrl'
+      }
+    }
+  })
+
+  .state('tab.edit-contact',{
+    url:'/profile/:id/contacts',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/tab-profile-edit-contact.html',
+        controller:'ProfileEditCtrl'
+      }
+    }
+  })
+
+  .state('tab.settings',{
+    url:'/profile/:id/settings',
+    views:{
+      'tab-profile':{
+        templateUrl:'templates/settings.html',
+        controller:'SettingsCtrl'
+      }
+    }
+  })
 
   .state('tab.account', {
     url: '/account',
@@ -81,5 +132,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/explore');
+
 
 });

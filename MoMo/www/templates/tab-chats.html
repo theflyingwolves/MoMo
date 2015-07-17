@@ -1,15 +1,17 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Missions">
+
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/chats/{{mission.id}}">
+        <img ng-src="{{mission.face}}">
+        <h2>{{mission.name}}</h2>
+        <p>{{mission.message}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
+        <ion-option-button class="button-assertive" ng-click="remove(mission)">
+          Complete
         </ion-option-button>
+        
       </ion-item>
     </ion-list>
   </ion-content>

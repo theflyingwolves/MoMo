@@ -1,4 +1,57 @@
 /* Empty. Add your own CSS if you like */
+
+/** explore list **/
+.avatar {
+    position: relative;
+    max-width: 50px;
+    max-height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    color:white;
+}
+
+.icon-loc.ion-ios-location, .icon-time.ion-ios-clock-outline {
+    font-size: 20px;
+}
+
+.label-time {
+    display: inline-block;
+    position: absolute;
+    left:230px;
+}
+
+ion-item > .item-content{
+    width: 100%;
+}
+
+
+/**popover**/
+
+.popover {
+    opacity: 100!important;
+    left:50px!important;
+    top:100px!important;
+    width: 300px!important;
+    height: 400px!important;
+
+}
+
+    #offer-popover #btn-accept{
+        font-size: 20px;
+        margin: 20px auto;
+        text-align:center;
+        color: #FFE46E;
+    }
+
+        #btn-accept .ion-ios-checkmark-outline {
+            font-size: 50px;
+        }
+
+
+
+
+/**chat**/
 .chat-text-input {
 	position: absolute;
 	bottom: 20px;

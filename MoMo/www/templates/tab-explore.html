@@ -4,15 +4,19 @@
       <!--<ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/mission/{{chat.id}}">-->
       <ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap"">
 
-        <div class="row" ng-click="showPopup()">
+        <div class="row" ng-click="openPopover($event)">
           <div class="col col-33">
             <img class="avatar" ng-src="{{mission.face}}">
             <br>
             <p>{{mission.name}}</p>
           </div>
+
           <div class="col row">
-              <span class="ion-ios-location icon-loc"></span>
-              <span>{{mission.location}}</span>
+            <span class="ion-ios-location icon-loc"></span>
+            <span>{{mission.location}}</span>
+            <div class="">
+              <span class="ion-ios-location ion-social-usd"></span>
+              <span>{{mission.price}}</span>
             <div class="label-time">
               <span class="ion-ios-clock-outline icon-time"></span>
               <span>{{mission.time}}</span>

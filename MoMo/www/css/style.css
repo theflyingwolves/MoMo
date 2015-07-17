@@ -25,3 +25,30 @@ ion-item > .item-content{
     width: 100%;
 }
 
+
+/**popover**/
+
+.popover {
+    opacity: 100%!important;
+    left:50px!important;
+    top:100px!important;
+    width: 300px!important;
+    height: 400px!important;
+
+}
+
+    #offer-popover #btn-accept{
+        font-size: 20px;
+        margin: 20px auto;
+        text-align:center;
+        color: #FFE46E;
+    }
+
+        #btn-accept .ion-ios-checkmark-outline {
+            font-size: 50px;
+        }
+
+
+
+
+

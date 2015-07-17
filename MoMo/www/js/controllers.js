@@ -1,58 +1,45 @@
 angular.module('starter.controllers', [])
 
-.controller('ExploreCtrl', function ($scope, $ionicPopup, Missions) {
+.controller('ExploreCtrl', function ($scope, $ionicPopover, Missions) {
     $scope.missions = Missions.all();
     $scope.remove = function (mission) {
         Missions.remove(mission);
     }
 
-    // Triggered on a button click, or some other target
-    $scope.showPopup = function() {
-        $scope.data = {}
+    // .fromTemplate() method
+    var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
 
-        // An elaborate, custom popup
-        var myPopup = $ionicPopup.show({
-            template: '<input type="password" ng-model="data.wifi">',
-            title: 'Enter Wi-Fi Password',
-            subTitle: 'Please use normal things',
-            scope: $scope,
-            buttons: [
-                { text: 'Cancel' },
-                {
-                    text: '<b>Save</b>',
-                    type: 'button-positive',
-                    onTap: function(e) {
-                        if (!$scope.data.wifi) {
-                            //don't allow the user to close unless he enters wifi password
-                            e.preventDefault();
-                        } else {
-                            return $scope.data.wifi;
-                        }
-                    }
-                }
-            ]
-        });
-        myPopup.then(function(res) {
-            console.log('Tapped!', res);
-        });
-        $timeout(function() {
-            myPopup.close(); //close the popup after 3 seconds for some reason
-        }, 3000);
-    };
+    $scope.popover = $ionicPopover.fromTemplate(template, {
+        scope: $scope
+    });
 
-    $scope.showConfirm = function() {
-        var confirmPopup = $ionicPopup.confirm({
-            title: 'Consume Ice Cream',
-            template: 'Are you sure you want to eat this ice cream?'
-        });
-        confirmPopup.then(function(res) {
-            if(res) {
-                console.log('You are sure');
-            } else {
-                console.log('You are not sure');
-            }
-        });
+    // .fromTemplateUrl() method
+    $ionicPopover.fromTemplateUrl('templates/offer-popover.html', {
+        scope: $scope
+    }).then(function(popover) {
+        console.log(popover)
+        $scope.popover = popover;
+    });
+
+
+    $scope.openPopover = function($event) {
+        $scope.popover.show($event);
     };
+    $scope.closePopover = function() {
+        $scope.popover.hide();
+    };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.popover.remove();
+    });
+    // Execute action on hide popover
+    $scope.$on('popover.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove popover
+    $scope.$on('popover.removed', function() {
+        // Execute action
+    });
 })
 
 .controller('MissionDetailCtrl', function ($scope, $stateParams, Missions) {

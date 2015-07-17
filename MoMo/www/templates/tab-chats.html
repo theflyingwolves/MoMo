@@ -2,7 +2,7 @@
 
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/chats/info/{{mission.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/chats/{{mission.id}}">
         <img ng-src="{{mission.face}}">
         <h2>{{mission.name}}</h2>
         <p>{{mission.message}}</p>

@@ -56,12 +56,13 @@ angular.module('starter.controllers', [])
     //});
 
     $scope.missions = Missions.all();
+
     $scope.remove = function (mission) {
         Missions.remove(mission);
     };
 })
 
-.controller('ChatDetailCtrl', function ($scope, $stateParams, Missions) {
+.controller('ChatDetailCtrl', function ($scope, $stateParams,$ionicModal, Missions) {
     $scope.mission = Missions.get($stateParams.missionId);
 
     $ionicModal.fromTemplateUrl('templates/chat-info.html',{
@@ -81,9 +82,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function ($scope) {
-        $scope.settings = {
-            enableFriends: true
-        };
+    $scope.settings = {
+        enableFriends: true
+    };
 })
 
 .controller('ProfileCtrl',function($scope,Profiles){

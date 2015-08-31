@@ -2,7 +2,7 @@
 
 /** General **/
 ion-nav-bar ion-header-bar.bar.bar-stable {
-    background-color: #FF56AB;
+    background-color: #ff554b;
 }
 
     .bar-stable .button {
@@ -14,14 +14,14 @@ ion-nav-bar ion-header-bar.bar.bar-stable {
     }
 
 .tabs {
-    background-color: #FF56AB;
+    background-color: #ff554b;
 }
     ion-tabs.tabs-color-active-positive .tab-item{
         color: white;
     }
 
     ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-        color: #FFE46E;
+        color: #a7edf3;
     }
 
 /** explore list **/
@@ -49,10 +49,18 @@ ion-item > .item-content{
     width: 100%;
 }
 
+.bar-stable .button.ion-heart {
+    color: white;
+}
+
+.bar-stable .button.ion-heart.enabled {
+    color: #a7edf3;
+}
 
 /**popover**/
 
 .popover {
+    position: fixed;
     opacity: 100!important;
     left:50px!important;
     top:100px!important;
@@ -61,15 +69,15 @@ ion-item > .item-content{
 }
 
 .popover ion-header-bar.bar-header{
-    background-color: #FF56AB;
+    background-color: #ff554b;
 }
 
     #offer-popover #btn-accept{
         font-size: 20px;
         margin: 20px auto;
         text-align:center;
-        color: #FFE46E;
-        background-color:  #FF56AB;
+        color: #a7edf3;
+        background-color:  #ff554b;
     }
 
         #btn-accept .ion-ios-checkmark-outline {
@@ -89,4 +97,112 @@ ion-item > .item-content{
 #chat-content .scroll {
 	height: 100%;
 }
+
+
+/*chat*/
+.messaging-view .scroll {
+    padding: 10px 0 50px !important;
+}
+.messages {
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    -webkit-align-content: center !important;
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+    -webkit-box-align: center !important;
+    -moz-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+
+
+}
+
+.messages .message{
+    -webkit-box-flex: 1 !important;
+    -moz-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    padding: 10px !important;
+    -webkit-transition: all 250ms ease-in-out !important;
+    transition: all 250ms ease-in-out !important;
+    overflow: hidden !important;
+    text-align: left !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+.time {
+    -webkit-box-flex: 0 !important;
+    -moz-box-flex: 0 !important;
+    -webkit-flex: 0 1 auto !important;
+    -ms-flex: 0 1 auto !important;
+    flex: 0 1 auto !important;
+    -webkit-align-self: auto !important;
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+    width: 120px !important;
+    text-align: center !important;
+    padding: 0 0 0 0 !important;
+    -webkit-transition: all 250ms ease-in-out !important;
+    transition: all 250ms ease-in-out !important;
+    -webkit-transform: translate3d(10px, 0, 0) !important;
+    -moz-transform: translate3d(10px, 0, 0) !important;
+    transform: translate3d(10px, 0, 0) !important;
+
+}
+
+.time.slide-right {
+   -webkit-transform: translate3d(130px, 0, 0) !important;
+   -moz-transform: translate3d(130px, 0, 0) !important;
+   transform: translate3d(130px, 0, 0) !important;
+}
+
+/*This will change */
+.message.other .message {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    text-align: right !important;
+}
+
+.messages.other .message.slide-right {
+    -webkit-transform: translate3d(120px, 0, 0) !important;
+    -moz-transform: translate3d(120px, 0, 0) !important;
+    transform: translate3d(120px, 0, 0) !important;
+}
+
+.messages.other span {
+    color: black !important;
+    background-color: #C7C7CC !important;
+    float: right
+}
+
+
+.messaging-view span {
+    background: #007AFF !important;
+    display: inline-block !important;
+    color: white !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    text-align: left !important;
+    max-width: 240px !important;
+}
+
+/**Profile**/
+.item-avatar.profile-avatar{
+    padding-left: 100px;
+}
+
+    .item-avatar.profile-avatar img{
+        max-width: 60px;
+        max-height: 60px;
+        top:0;
+    }
 

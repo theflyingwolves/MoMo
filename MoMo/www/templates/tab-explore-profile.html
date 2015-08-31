@@ -1,0 +1,42 @@
+<ion-view view-title="Profile">
+
+    <ion-content class="padding">
+        <div class="item-remove-animate item-avatar item-icon-right profile-avatar" type="item-text-wrap">
+            <img ng-src="{{profile.face}}">
+            <h2>{{profile.name}}</h2>
+            <p>{{profile.description}}</p>
+            <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
+        </div>
+
+        <div class="list list-inset">
+
+            <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/addresses">
+                <h2>Delivery Addresses</h2>
+                <p>{{profile.addresses[0]}}</p>
+            </ion-item>
+
+            <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/contacts">
+                <h2>Contact Numbers</h2>
+                <p>{{profile.contact}}</p>
+            </ion-item>
+        </div>
+
+        <div class="list list-inset">
+            <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/facebook">
+                <h2>Facebook</h2>
+                <p>{{profile.facebook}}</p>
+            </ion-item>
+
+            <ion-item class="item item-icon-right" href="#/tab/profile/{{profile.id}}/wechat">
+                <h2>Wechat</h2>
+                <p>{{profile.wechat}}</p>
+            </ion-item>
+        </div>
+        <button class="button button-block button-calm" ng-click="addToListList()" ng-if="!isLiked()">
+            Add to like list
+        </button>
+        <button class="button button-block button-outline button-calm" ng-click="removeFromLikeList()" ng-if="isLiked()">
+            Already liked
+        </button>
+    </ion-content>
+</ion-view>

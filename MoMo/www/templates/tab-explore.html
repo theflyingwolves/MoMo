@@ -1,19 +1,19 @@
 <ion-view view-title="Explore">
   <ion-nav-buttons side="left">
-    <button class="button button-icon ion-plus" ng-click="newEvent()"></button>
+    <button class="button button-icon ion-plus" ng-click="openRequestPopover()"></button>
     <h1 class="title"></h1>
-    <button menu-toggle="left" class="button button-icon icon ion-heart"></button>
+    <button menu-toggle="left" class="button button-icon icon ion-heart" ng-class="{enabled: likeFlag==true}" ng-click="triggerLikeFlag();"></button>
   </ion-nav-buttons>
   <ion-content>
 
     <ion-list>
 
       <!--<ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap" href="#/tab/mission/{{chat.id}}">-->
-      <ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" type="item-text-wrap"">
+      <ion-item class="item-remove-animate item-icon-right row" ng-repeat="mission in missions" ng-if="mission.status == 0 && ( isLiked($index) || !likeFlag )" type="item-text-wrap">
 
-        <div class="row" ng-click="openPopover($event)">
+        <div class="row" ng-click="openOfferPopover($event, mission.id)">
           <div class="col col-33">
-            <img class="avatar" ng-src="{{mission.face}}">
+            <a href="#/tab/explore/{{mission.id}}" ng-click="$event.stopPropagation();"><img class="avatar" ng-src="{{mission.face}}" ></a>
             <br>
             <p>{{mission.name}}</p>
           </div>
@@ -31,6 +31,7 @@
             <p>{{mission.message}}</p>
             <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
           </div>
+        </div>
         </div>
 
         <!--<ion-option-button class="button-assertive" ng-click="remove(mission)">-->

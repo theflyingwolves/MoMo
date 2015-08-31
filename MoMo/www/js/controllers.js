@@ -97,6 +97,7 @@ angular.module('starter.controllers', [])
     //});
 
     $scope.missions = Missions.all();
+
     $scope.remove = function (mission) {
         Missions.remove(mission);
     };
@@ -148,12 +149,13 @@ angular.module('starter.controllers', [])
     $scope.data = {};
     $scope.myId = '12345';
     $scope.messages = [];
+
 })
 
 .controller('AccountCtrl', function ($scope) {
-        $scope.settings = {
-            enableFriends: true
-        };
+    $scope.settings = {
+        enableFriends: true
+    };
 })
 
 .controller('ProfileCtrl',function($scope,Profiles){

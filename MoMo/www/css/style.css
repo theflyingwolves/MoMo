@@ -206,3 +206,12 @@ ion-item > .item-content{
         top:0;
     }
 
+#hide-chat-detail-btn {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+#chat-detail-modal-content .scroll {
+	height: 100%;
+}

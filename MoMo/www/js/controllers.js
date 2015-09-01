@@ -63,6 +63,24 @@ angular.module('starter.controllers', [])
     $scope.$on('popover.removed', function() {
         // Execute action
     });
+
+
+    $scope.newRequestDetail = {};
+    $scope.resetNewRequestDetail = function(){
+        $scope.newRequestDetail = {
+        restaurant:"",
+        time:"",
+        tips:"",
+        comment:""
+        }
+    }
+    $scope.confirmAddRequest = function(){
+        console.log($scope.newRequestDetail)
+        $scope.resetNewRequestDetail()
+        $scope.popover.hide()
+
+    }
+
 })
 
 .controller('ExploreProfileCtrl', function($scope, $stateParams, Missions, Profiles) {

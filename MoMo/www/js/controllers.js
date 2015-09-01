@@ -21,15 +21,7 @@ angular.module('starter.controllers', [])
         $scope.likeFlag = !$scope.likeFlag;
     }
 
-    $scope.openRequestPopover = function($event) {
-        $ionicPopover.fromTemplateUrl('templates/new-request.html', {
-            scope: $scope
-        }).then(function(popover) {
-            $scope.popover = popover;
-            $scope.popover.show($event);
-            console.log($scope.popover)
-        });
-    }
+
 
     $scope.openOfferPopover = function($event, missionId ) {
         $ionicPopover.fromTemplateUrl('templates/offer-popover.html', {
@@ -63,23 +55,6 @@ angular.module('starter.controllers', [])
     $scope.$on('popover.removed', function() {
         // Execute action
     });
-
-
-    $scope.newRequestDetail = {};
-    $scope.resetNewRequestDetail = function(){
-        $scope.newRequestDetail = {
-        restaurant:"",
-        time:"",
-        tips:"",
-        comment:""
-        }
-    }
-    $scope.confirmAddRequest = function(){
-        console.log($scope.newRequestDetail)
-        $scope.resetNewRequestDetail()
-        $scope.popover.hide()
-
-    }
 
 })
 
@@ -170,10 +145,37 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-        enableFriends: true
-    };
+.controller('RequestCtrl', function ($scope, $ionicPopover) {
+    $scope.requestList = []
+
+
+
+    $scope.openRequestPopover = function($event) {
+        $ionicPopover.fromTemplateUrl('templates/new-request.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popover = popover;
+            $scope.popover.show($event);
+            console.log($scope.popover)
+        });
+    }
+    $scope.newRequestDetail = {};
+    $scope.resetNewRequestDetail = function(){
+        $scope.newRequestDetail = {
+        restaurant:"",
+        time:"",
+        tips:"",
+        comment:""
+        }
+    }
+    $scope.confirmAddRequest = function(){
+        // console.log($scope.newRequestDetail)
+        $scope.requestList.push($scope.newRequestDetail)
+        $scope.resetNewRequestDetail()
+        $scope.popover.hide()
+
+    }
+
 })
 
 .controller('ProfileCtrl',function($scope,Profiles){

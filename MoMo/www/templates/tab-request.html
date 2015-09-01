@@ -1,0 +1,18 @@
+<ion-view view-title="Account">
+  <ion-nav-buttons side="left">
+    
+    <h1 class="title"></h1>
+    <button class="button button-icon ion-plus" ng-click="openRequestPopover()"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="request in requestList" href="">
+        {{request.restaurant}}
+        <span class="item-note">
+	      {{request.tips}} {{request.time}}
+	    </span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -22,11 +22,12 @@ angular.module('starter.controllers', [])
     }
 
 
-
+    $scope.currentOffer = {}
     $scope.openOfferPopover = function($event, missionId ) {
         $ionicPopover.fromTemplateUrl('templates/offer-popover.html', {
             scope: $scope
         }).then(function(popover) {
+            $scope.currentOffer = Missions.get(missionId)
             $scope.popover = popover;
             $scope.popover.show($event);
             console.log($scope.popover);

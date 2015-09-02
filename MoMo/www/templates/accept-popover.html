@@ -20,17 +20,17 @@
                 </li>
             </ul>
             <hr>
-            <div class="item item-avatar item-icon-right" href="#">
+            <div class="item item-avatar item-icon-right" href="#" ng-if="should_show_accept(1);">
               <img src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
               <h2>Ben Sparrow</h2>
               <p>6:30pm</p>
-              <i class="icon ion-checkmark-circled"></i>
+              <i class="icon ion-checkmark-circled" ng-click="select(1);" ng-if="should_show_accept(0);"></i>
             </div>
-            <div class="item item-avatar item-icon-right" href="#">
+            <div class="item item-avatar item-icon-right" href="#" ng-if="should_show_accept(2);">
               <img src="https://avatars3.githubusercontent.com/u/11214?v=3&s=460">
               <h2>Max Lynx</h2>
               <p>6:00pm</p>
-              <i class="icon ion-checkmark-circled"></i>
+              <i class="icon ion-checkmark-circled" ng-click="select(2);" ng-if="should_show_accept(0);"></i>
             </div>
 
             <!-- <label class="item item-input">

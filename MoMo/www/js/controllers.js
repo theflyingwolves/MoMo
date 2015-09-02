@@ -175,6 +175,7 @@ angular.module('starter.controllers', [])
         status:0 //0:uninit, 1:pending, 2:alert, 3:confirmed
         }
     }
+    $scope.resetNewRequestDetail();
     $scope.confirmAddRequest = function(){
         // console.log($scope.newRequestDetail)
         $scope.newRequestDetail.status = 1;
@@ -220,6 +221,16 @@ angular.module('starter.controllers', [])
             $scope.popover.remove();
         };
     };
+    $scope.accept_selected = 0;
+    $scope.should_show_accept = function(index){
+        return $scope.accept_selected == 0 || $scope.accept_selected == index;
+    }
+    $scope.select = function(index){
+        $scope.currentRequestOpened.status = 3;
+        $scope.closePopover();
+        console.log(index);
+        $scope.accept_selected = index;
+    }
 
 })
 

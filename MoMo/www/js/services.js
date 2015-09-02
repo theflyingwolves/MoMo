@@ -91,8 +91,8 @@ angular.module('starter.services', [])
 .factory('Profiles',function(){
   var profile = {
     id:0,
-    name:'MoMo',
-    description:'Hi~ This is MoMo~',
+    name:'Flappy',
+    description:'Hi~ This is FlappyFood~',
     addresses:[
                 '12 Kent Ridge Drive, Singapore(119243)',
                 '13 Kent Ridge Drive, Singapore(119243)',
@@ -104,7 +104,7 @@ angular.module('starter.services', [])
     wechat:'theflyingwolves'
   };
 
-    var likeList = [2];
+    var likeList = [2]
 
     return {
         all: function(){

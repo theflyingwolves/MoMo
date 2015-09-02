@@ -77,6 +77,10 @@ ion-item > .item-content{
     height:330px!important;
 }
 
+.popover-accept {
+    left:160px!important;
+}
+
 .popover ion-header-bar.bar-header{
     background-color: #ff554b;
 }

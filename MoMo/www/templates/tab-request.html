@@ -7,11 +7,17 @@
 
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="request in requestList" href="">
+      <ion-item ng-repeat="request in requestList" class="item-icon-left item-icon-right" ng-click="openAcceptPopover($index)">
+        <i class="icon ion-android-restaurant"></i>
         {{request.restaurant}}
         <span class="item-note">
-	      {{request.tips}} {{request.time}}
+	      {{get_request_comment_short($index)}}
 	    </span>
+        <i class="icon ion-load-a" ng-if="is_request_pending($index)"></i>
+        <i class="icon ion-alert" ng-if="is_request_alerted($index)"></i>
+        <i class="icon ion-checkmark-circled" ng-if="is_request_confirmed($index)"></i>
+        
+
       </ion-item>
     </ion-list>
   </ion-content>

@@ -1,0 +1,51 @@
+<ion-popover-view class="popover-accept">
+    <ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar>
+    <ion-content>
+        <div id="offer-popover">
+            <ul class="list">
+                <li class="item">
+                    <span class="ion-ios-location icon-loc"></span>
+                    <span>{{currentRequestOpened.restaurant}}</span>
+                </li>
+                <li class="item">
+                    <span class="ion-ios-clock-outline icon-time"></span>
+                    <span>{{currentRequestOpened.time}}</span>
+                </li>
+                <li class="item">
+
+                    <span>tips: {{currentRequestOpened.tips}}</span>
+                </li>
+                <li class="item">
+                    <span>{{currentRequestOpened.comment}}</span>
+                </li>
+            </ul>
+            <hr>
+            <div class="item item-avatar item-icon-right" href="#">
+              <img src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
+              <h2>Ben Sparrow</h2>
+              <p>6:30pm</p>
+              <i class="icon ion-checkmark-circled"></i>
+            </div>
+            <div class="item item-avatar item-icon-right" href="#">
+              <img src="https://avatars3.githubusercontent.com/u/11214?v=3&s=460">
+              <h2>Max Lynx</h2>
+              <p>6:00pm</p>
+              <i class="icon ion-checkmark-circled"></i>
+            </div>
+
+            <!-- <label class="item item-input">
+                <span class="input-label">Fee</span>
+                <input type="text" placeholder="$10">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Time</span>
+                <input type="text" placeholder="11:20AM">
+            </label> -->
+            <!-- <div id="btn-accept">
+                <span  class="ion-ios-checkmark-outline"></span>
+                <br/>
+                <span>Accept</span>
+            </div> -->
+        </div>
+    </ion-content>
+</ion-popover-view>

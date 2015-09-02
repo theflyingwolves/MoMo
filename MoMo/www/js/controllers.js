@@ -146,7 +146,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RequestCtrl', function ($scope, $ionicPopover) {
-    $scope.requestList = []
+    $scope.requestList = [
+    {   restaurant:"McDonald's",
+        time:"6:00pm",
+        tips:"$2",
+        comment:"an upsize double cheeseburger meal with fries and normal coke ",
+        status:2}
+    ]
 
 
 
@@ -165,16 +171,55 @@ angular.module('starter.controllers', [])
         restaurant:"",
         time:"",
         tips:"",
-        comment:""
+        comment:"",
+        status:0 //0:uninit, 1:pending, 2:alert, 3:confirmed
         }
     }
     $scope.confirmAddRequest = function(){
         // console.log($scope.newRequestDetail)
+        $scope.newRequestDetail.status = 1;
         $scope.requestList.push($scope.newRequestDetail)
         $scope.resetNewRequestDetail()
         $scope.popover.hide()
-
     }
+
+    // handle status of the request list
+    $scope.is_request_pending = function(index){
+        return $scope.requestList[index].status == 1
+    }
+    $scope.is_request_alerted = function(index){
+        return $scope.requestList[index].status == 2
+    }
+    $scope.is_request_confirmed = function(index){
+        return $scope.requestList[index].status == 3
+    }
+
+    // get a short comment as item note
+    $scope.get_request_comment_short = function(index){
+        if ($scope.requestList[index].comment.length > 20) {
+            return $scope.requestList[index].comment.substring(0,15)+"..."
+        } else{
+            return $scope.requestList[index].comment
+        }
+    }
+    
+    $scope.currentRequestOpened = {}
+    $scope.openAcceptPopover = function(index) {
+        if ($scope.is_request_alerted(index)) {
+            $scope.currentRequestOpened = $scope.requestList[index]
+            $ionicPopover.fromTemplateUrl('templates/accept-popover.html', {
+                scope: $scope
+            }).then(function(popover) {
+                $scope.popover = popover;
+                $scope.popover.show();
+            });
+        }            
+    };
+    $scope.closePopover = function() {
+        if ($scope.popover) {
+            $scope.popover.remove();
+        };
+    };
 
 })
 

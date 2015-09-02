@@ -14,9 +14,9 @@ angular.module('starter.services', [])
         id: 0,
         name: 'Ben Sparrow',
         location: 'Temasek',
-        time: 'one hour',
-        message: '肉夹馍 金德来',
-        price: 4,
+        time: '12:30pm',
+        message: 'Taiwan porridge: Daoxiao Mian',
+        price: 2.5,
         face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png',
         status: DEFAULT
 
@@ -24,9 +24,9 @@ angular.module('starter.services', [])
         id: 1,
         name: 'Max Lynx',
         location: 'PGP',
-        message: '凉皮 黄土地',
-        time: 'one hour',
-        price: 3,
+        message: 'Hongkong Kitchen: Beef rice',
+        time: '12:00pm',
+        price: 2,
         face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460',
         status: DEFAULT
 
@@ -34,9 +34,9 @@ angular.module('starter.services', [])
         id: 2,
         name: 'Adam Bradleyson',
         location: 'KE',
-        time: 'one hour',
-        price: 5.5,
-        message: '番茄鸡蛋面 香港小厨',
+        time: '1:00pm',
+        price: 1,
+        message: 'PGP shannxi: Liangpi',
         face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg',
         status: DEFAULT
 
@@ -44,18 +44,18 @@ angular.module('starter.services', [])
         id: 3,
         name: 'Perry Governor',
         location: 'RH',
-        time: 'one hour',
-        price: 3.5,
-        message: '刀削面 清香小菜',
+        time: '12:30pm',
+        price: 1.5,
+        message: 'Science canteen western: beef steak',
         face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png',
         status: ONGOING
     }, {
         id: 4,
         name: 'Mike Harrington',
         location: 'Shears',
-        time: 'one hour',
-        price: 3,
-        message:  '九里香 PGP',
+        time: '12:40pm',
+        price: 2,
+        message:  'Utown Koufu Sweets: Qingtang',
         face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png',
         status: COMPLETED
     }];

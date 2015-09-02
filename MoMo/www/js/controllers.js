@@ -206,7 +206,8 @@ angular.module('starter.controllers', [])
     
     $scope.currentRequestOpened = {}
     $scope.openAcceptPopover = function(index) {
-        if ($scope.is_request_alerted(index)) {
+        if (true) {
+        // if ($scope.is_request_alerted(index)) {
             $scope.currentRequestOpened = $scope.requestList[index]
             $ionicPopover.fromTemplateUrl('templates/accept-popover.html', {
                 scope: $scope
